@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cook From Your Fridge!</title>
+    <style>
+        body {
+            background-image: url("https://images.pexels.com/photos/255501/pexels-photo-255501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+        }
+        .errortitle {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="padding-top: 3%; text-align: center; color: white">
+        It's time for cooking! What do you have in the fridge? <br></h1>
+    <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Fridge.jpg" alt="fridge" width="25%" height="25%"></p>
+    <form action="recipes">
+        <div class="input">
+          <input type="text" placeholder="Apple, flour, sugar" aria-label="Ingredients" name="ingredients">
+          <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+          </div>
+      </div>
+    </form>
+{% if prompt %}
+<div class= 'errortitle'>{{prompt}}</div>
+{% endif %}
+</body>
+</html>

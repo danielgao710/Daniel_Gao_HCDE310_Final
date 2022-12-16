@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipes From Your Fridge</title>
+    <style>
+        body {
+            background-image: url("https://as2.ftcdn.net/v2/jpg/03/78/97/59/1000_F_378975954_G39M4ptXAjxKy80gbBIEo0wqBkk89gBF.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+    </style>
+</head>
+<body>
+    <h1>You can try to cook these dishes:</h1>
+    <h2>(Click on the pictures for detailed recipes)</h2>
+    <p><a href='/'>Cook with other ingredients?</a></p>
+{% for recipe in recipes %}
+    <div class="media">
+        <b style="font-size: 20px">{{recipe.title}}</b>
+        <p>You miss {{recipe.missedIngredientCount}} ingredients to cook</p>
+        <p>Ingredients you miss: {{recipe.missedIngredients}}</p>
+        <a href="https://spoonacular.com/recipes/{{recipe.title}}-{{recipe.id}}">
+            <img src="{{recipe['image']}}" class="align-self-center mr-3" alt="..." width="25%" height="25%">
+            <!--<img src="{{recipe.make_photo_url()}}" alt="recipe.id">-->
+        </a>
+    </div> <br>
+{% endfor %}
+</body>
+</html>
